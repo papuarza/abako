@@ -1,0 +1,89 @@
+<div class="home-wrapper">
+  <div class="main">
+    <div class="left">
+      <h1>¡Bienvenido a Abako!</h1>
+      <p>Revisá los detalles y compará la información de los distintos productos financieros disponibles en el mercado, para tomar la mejor decisión para tus finanzas personales.</p>
+      <div class="links-wrapper">
+        <a href="" class="dark">¡Comparar productos!</a>
+        <a href="" class="light">Saber más</a>
+      </div>
+    </div>
+    <div class="right">
+      <img src="/images/home-main.svg" alt="">
+    </div>
+  </div>
+  <div class="sub-main">
+    <div class="content">
+      <div class="cuadrant-1">
+        <img src="/images/sub-main-1.png" alt="">
+      </div>
+      <div class="cuadrant-2">
+        <span>SOBRE LA PLATAFORMA</span>
+        <h2>Mejor información, mejores decisiones</h2>
+        <p>Abako te ofrece un espacio con la más completa información sobre los productos financieros ofrecidos por las entidades financieras. Con esta información no solo podrás comparar los productos entre sí, sino también podrán aprender mejor sobre ellos, para poder tomar mejores decisiones en el mundo de las finanzas.</p>
+        <a href="">Explorar</a>
+      </div>
+      <div class="cuadrant-3">
+        <span>SOBRE LA PLATAFORMA</span>
+        <h2>Buscá un producto, revisá sus características, compáralo con otros, ¡y listo!</h2>
+        <p>Abako es fácil, útil y práctico. Solo tenés que buscar el producto financiero que más te interese o que necesites, revisar sus características, y hasta podes compararlo con otros. Si algún producto te interesa, te registras y te ayudamos a conseguirlo.</p>
+        <a href="">Explorar</a>
+      </div>
+      <div class="cuadrant-4">
+        <img src="/images/sub-main-2.png" alt="">
+      </div>
+    </div>
+  </div>
+  <div class="productos-home">
+    <div class="content">
+      <div class="title">
+        <span>PRODUCTOS DISPONIBLES</span>
+        <h2>Productos más populares</h2>
+        <p>
+          Te mostramos toda la oferta disponible en el mercado financiero, con las distintas características y beneficios de cada producto, con información organizada y fácil de revisar, para que elijas lo que más te conviene y se adecua a tus necesidades.
+        </p>
+      </div>
+      <div class="items-wrapper">
+
+        {{#each productos}}
+        <div class="item-wrapper">
+          <div class="title-wrapper">
+            <div class="left">
+
+              <h3>{{this.nombre}}</h3>
+              <span>Ultima actualización: {{this.datos.0.fechaFormateada}}</span>
+            </div>
+            <div class="right">
+              <img src="{{this.banco.logo}}" alt="">
+            </div>
+          </div>
+          <div class="info-items">
+            <div class="info-wrap">
+              <span>Saldo promedio en cuenta</span>
+              <p>{{this.datos.0.saldoPromedio.montoFormateado}} {{this.datos.0.saldoPromedio.moneda}}</p>
+            </div>
+            <div class="info-wrap">
+              <span>Multa debajo del promedio</span>
+              <p>{{this.datos.0.multaSaldoInferior.montoFormateado}} {{this.datos.0.multaSaldoInferior.moneda}}</p>
+            </div>
+            <div class="info-wrap">
+              <span>Extracciones Cajeros Propios</span>
+              <p>{{this.datos.0.extraccionesCajerosPropios.monto}}</p>
+            </div>
+            <div class="info-wrap">
+              <span>Extracciones Cajeros Externos</span>
+              <p>{{this.datos.0.extraccionesCajerosOtros.monto}}</p>
+            </div>
+
+            <div class="info-wrap long">
+              <span>Entidad</span>
+              <p>{{this.banco.nombre}}</p>
+            </div>
+          </div>
+
+        </div>
+        {{/each}}
+      </div>
+    </div>
+  </div>
+</div>
