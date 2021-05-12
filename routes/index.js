@@ -36,6 +36,21 @@ router.get('/como-funciona', (req, res, next) => {
   res.render('funciona');
 });
 
+router.get('/blog', (req, res, next) => {
+  res.render('blog');
+});
+
+router.get('/blog/finanzas-personales', (req, res, next) => {
+  res.render('blog/1');
+});
+
+router.get('/terminos', (req, res, next) => {
+  res.render('terminos');
+});
+router.get('/politica', (req, res, next) => {
+  res.render('politica');
+});
+
 router.get('/contacto', (req, res, next) => {
   res.render('contacto');
 });

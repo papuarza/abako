@@ -1,13 +1,97 @@
 <div class="productos-wrapper">
   <div class="main">
     <div class="left">
-      <h2>Nuestros Productos</h2>
-      <p>A continuación te mostramos los productos disponibles en la web.</p>
-      <p>Constantemente estamos buscando agregar nuevos productos financeros que estén disponibles para que puedas tomar mejores decisiones.</p>
-      <p>Si estás interesado en algún producto que no encontrás más abajo, contamos y lo investigamos por vos.</p>
+      <h2>Productos Financieros</h2>
+      <p>
+        A continuación te mostramos los productos disponibles en la plataforma. Hacé click en el tipo de producto en el
+        que estés interesado, para más información.
+      </p>
+      <p>
+        Si no encontrás el producto que estás buscando, escribinos y contanos de cuál se trata. Estamos constantemente
+        actualizando la información de las ofertas del mercado.
+      </p>
     </div>
     <div class="right">
       <img src="/images/sub-main-2.png" alt="">
+    </div>
+  </div>
+  <div class="products-menu-wrapper">
+    <div class="item z-depth-1">
+      <img src="/images/credito.svg" alt="">
+      <h4>Tarjetas de Crédito</h4>
+      <a href="">Ver todas</a>
+    </div>
+    <div class="item z-depth-1">
+      <img src="/images/debito.svg" alt="">
+      <h4>Tarjetas de Débito</h4>
+      <a href="">Ver todas</a>
+    </div>
+    <div class="item z-depth-1">
+      <img src="/images/cda.svg" alt="">
+      <h4>CDA's</h4>
+      <a href="">Ver todas</a>
+    </div>
+    <div class="item z-depth-1">
+      <img src="/images/corrientes.svg" alt="">
+      <h4>Cuentas corrientes</h4>
+      <a href="">Ver todas</a>
+    </div>
+    <div class="item z-depth-1">
+      <img src="/images/ahorro.svg" alt="">
+      <h4>Cuentas de Ahorro</h4>
+      <a href="">Ver todas</a>
+    </div>
+  </div>
+  <div class="productos-home">
+    <div class="content">
+      <div class="title">
+        <span>PRODUCTOS DISPONIBLES</span>
+        <h2>Productos más populares</h2>
+        <p>
+          Te mostramos toda la oferta disponible en el mercado financiero, con las distintas características y beneficios de cada producto, con información organizada y fácil de revisar, para que elijas lo que más te conviene y se adecua a tus necesidades.
+        </p>
+      </div>
+      <div class="items-wrapper">
+
+        {{#each productos}}
+        <div class="item-wrapper">
+          <div class="title-wrapper">
+            <div class="left">
+
+              <h3>{{this.nombre}}</h3>
+              <span>Ultima actualización: {{this.datos.0.fechaFormateada}}</span>
+            </div>
+            <div class="right">
+              <img src="{{this.banco.logo}}" alt="">
+            </div>
+          </div>
+          <div class="info-items">
+            <div class="info-wrap">
+              <span>Saldo promedio en cuenta</span>
+              <p>{{this.datos.0.saldoPromedio.montoFormateado}} {{this.datos.0.saldoPromedio.moneda}}</p>
+            </div>
+            <div class="info-wrap">
+              <span>Multa debajo del promedio</span>
+              <p>{{this.datos.0.multaSaldoInferior.montoFormateado}} {{this.datos.0.multaSaldoInferior.moneda}}</p>
+            </div>
+            <div class="info-wrap">
+              <span>Extracciones Cajeros Propios</span>
+              <p>{{this.datos.0.extraccionesCajerosPropios.monto}}</p>
+            </div>
+            <div class="info-wrap">
+              <span>Extracciones Cajeros Externos</span>
+              <p>{{this.datos.0.extraccionesCajerosOtros.monto}}</p>
+            </div>
+
+            <div class="info-wrap long">
+              <span>Entidad</span>
+              <p>{{this.banco.nombre}}</p>
+            </div>
+          </div>
+
+        </div>
+        {{/each}}
+      </div>
     </div>
   </div>
 </div>
