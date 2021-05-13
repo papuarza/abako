@@ -979,11 +979,11 @@ footer {
         }
       }
       img.logo {
-        filter: brightness(40);
+        filter: grayscale(1) brightness(30);
       }
       div.social {
         img {
-          filter: brightness(40);
+          filter: grayscale(1) brightness(30);
         }
       }
     }
@@ -1258,5 +1258,13 @@ footer {
 
   .post-wrapper .main img.full-img {
     width: 100%;
+  }
+
+  .home-wrapper .sub-main .content .cuadrant-1, .home-wrapper .sub-main .content .cuadrant-4 {
+    align-items: center;
+  }
+
+  .home-wrapper {
+    overflow-x: hidden;
   }
 }
