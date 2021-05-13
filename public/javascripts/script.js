@@ -9,4 +9,22 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  let openMenu = document.getElementById('openMenu');
+  let menuMobile = document.getElementById('menuMobile');
+  let closeMenu = document.getElementById('closeMenu');
+  if(openMenu) {
+    openMenu.addEventListener('click', () => {
+      menuMobile.classList.remove('animate__fadeOutLeft');
+      menuMobile.classList.add('animate__fadeInRight');
+      menuMobile.style.display = 'flex';
+    })
+  }
+  
+  if(closeMenu) {
+    closeMenu.addEventListener('click', () => {
+      menuMobile.classList.remove('animate__fadeInRight');
+      menuMobile.classList.add('animate__fadeOutLeft');
+    })
+  }
+
 }, false);

@@ -660,6 +660,7 @@ footer {
           padding: 5px 0;
           margin: 5px 0;
           font-size: 24px;
+          font-weight: 100;
           border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
         nav.mobile .menu-mobile-wrapper div.links a.active {
           color: #2CC74D;
@@ -730,6 +731,14 @@ footer {
     flex-wrap: wrap;
     height: auto;
     padding: 100px 30px; }
+  .blog-wrapper .entradas-wrapper {
+    width: 100%;
+    padding: 0px 30px 50px; }
+  .blog-wrapper .entradas-wrapper .items-wrapper {
+    width: 100%; }
+  .blog-wrapper .entradas-wrapper .items-wrapper .item {
+    width: 80%;
+    margin: 0 auto; }
   .como-funciona-wrapper .main,
   .blog-wrapper .main {
     padding-bottom: 50px; }
