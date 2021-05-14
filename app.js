@@ -8,7 +8,7 @@ const hbs          = require('hbs');
 const mongoose     = require('mongoose');
 const logger       = require('morgan');
 const path         = require('path');
-const sslRedirect  = require('heroku-ssl-redirect');
+
 
 const session    = require("express-session");
 const MongoStore = require('connect-mongo')(session);
@@ -28,7 +28,10 @@ const app_name = require('./package.json').name;
 const debug = require('debug')(`${app_name}:${path.basename(__filename).split('.')[0]}`);
 
 const app = express();
-app.use(sslRedirect());
+app.enable('trust proxy')
+app.use((req, res, next) => {
+    req.secure ? next() : res.redirect('https://' + req.headers.host + req.url)
+})
 
 // Middleware Setup
 app.use(logger('dev'));
